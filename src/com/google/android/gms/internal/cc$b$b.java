@@ -1,0 +1,64 @@
+package com.google.android.gms.internal
+
+import java.util.HashMap;
+import java.util.Set;
+import android.os.Parcel;
+
+public final class cc$b$b extends com.google.android.gms.internal.ae implements com.google.android.gms.common.internal.safeparcel.SafeParcelable, com.google.android.gms.plus.a.b.e,{
+	//instance field
+	private final Set b;
+	private final int c;
+	private int d;
+	private String e;
+	private int f;
+
+	//static field
+	public static final com.google.android.gms.internal.bp CREATOR;
+	private static final HashMap a;
+
+	//clinit method
+	static{
+	}
+
+	//init method
+	public cc$b$b(){
+	}
+	cc$b$b(Set aSet0, int aint0, int aint0, String aString0, int aint0){
+	}
+
+	//ordinary method
+	public synthetic Object a(){
+	}
+	protected Object a(String aString0){
+	}
+	protected boolean a(com.google.android.gms.internal.ae$a aae$a0){
+	}
+	protected Object b(com.google.android.gms.internal.ae$a aae$a0){
+	}
+	public HashMap b(){
+	}
+	protected boolean b(String aString0){
+	}
+	public int describeContents(){
+	}
+	Set e(){
+	}
+	public boolean equals(Object aObject0){
+	}
+	int f(){
+	}
+	public int g(){
+	}
+	public String h(){
+	}
+	public int hashCode(){
+	}
+	public int i(){
+	}
+	public com.google.android.gms.internal.cc$b$b j(){
+	}
+	public void writeToParcel(Parcel aParcel0, int aint0){
+	}
+
+}
+

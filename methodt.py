@@ -1,7 +1,7 @@
 
 from util_str import str_split_regext 
 from util_log import *
-from util_smali import type_get_java_type, parse_params
+from util_smali import type_get_java_type, parse_params, judge_if_rest_modifier
 
 class Methodt :
     "represent a java method"
@@ -13,7 +13,9 @@ class Methodt :
         self.params = []
         self.is_abstract = False
         self.is_native = False
+        self.cls = None
     def parse(self, classt, line):
+        self.cls = classt
         arr = str_split_regext(line, "[ \t]+")
         if arr is None or len(arr) < 2 :
             return False
@@ -22,12 +24,13 @@ class Methodt :
         sig = arr[len(arr)-1]
         modifiers = arr[1:len(arr)-1]
         for modifier in modifiers : 
-            #judge
             if modifier == 'native' :
                 self.is_native = True
             if modifier == 'abstract' :
                 self.is_abstract = True
-            self.modifiers.append(modifier)
+            #judge
+            if not judge_if_rest_modifier(modifier) :
+                self.modifiers.append(modifier)
         sig_index0 = sig.find("(")
         sig_index1 = sig.find(")")
         if -1 == sig_index0 or -1 == sig_index1 :
@@ -54,7 +57,7 @@ class Methodt :
             i = 0
             if params_types is not None :
                 for one_param_type in params_types:
-                    if one_param_type["system"] :
+                    if one_param_type["system"]  and not one_param_type["base"]:
                         classt.add_import(one_param_type["complete"])
                         self.params.append({"type":one_param_type["name"], "name": "a%s%d" % (one_param_type["name"], i) })
                     else :
@@ -66,4 +69,32 @@ class Methodt :
     
     def is_clinit(self) :
         return self.name == "<clinit>"
+    
+    def write_to_file(self, file) :
+        file.write("\t")
+        if self.name != '<clinit>' :
+            if len(self.modifiers) > 0 :
+                for modifier in self.modifiers :
+                    file.write("%s " % (modifier) )
+            if self.name == '<init>' :
+                file.write("%s(" % (self.cls.get_name()) )
+            else :
+                file.write("%s %s(" % (self.return_type, self.name) )
+            if len(self.params) > 0 :
+                i = 0
+                for param in self.params :
+                    if i == len(self.params)-1 :
+                        file.write("%s %s" % (param["type"], param["name"]) )
+                    else :
+                        file.write("%s %s, " % (param["type"], param["name"]) )
+                    i = i + 1
+            file.write(")")
+            if self.is_abstract or self.is_native :
+                file.write(";\n")
+            else :
+                file.write("{\n\t}\n")
+        else :
+            file.write("static{\n\t}\n")
+        
+        return True
         

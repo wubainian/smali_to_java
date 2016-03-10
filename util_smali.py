@@ -6,13 +6,21 @@ smali_types_maps = {'B':'byte', 'S':'short', 'I':'int', 'J':'long', 'F':'float',
 def get_type_identify(is_system, is_base):
     return {"system":is_system, "base": is_base, "package":None, "name":None, "complete":None}
 
+def judge_if_rest_modifier(modifier):
+    if modifier == 'constructor' :
+        return True
+    else :
+        return False
+
 def judge_if_smali_class(type):
     if None == type or 'L' != type[0] or ';' != type[len(type)-1] :
         return False
     return True
 
 def judge_if_system_class(java_type):
-    if java_type.startswith("java.") or java_type.startswith("javax.") :
+    if java_type.startswith("java.") or java_type.startswith("javax.") \
+        or java_type.startswith("android.app.") or java_type.startswith("android.os.") \
+        or java_type.startswith("android.view.") or java_type.startswith("android.content"):
         return True
     return False
 

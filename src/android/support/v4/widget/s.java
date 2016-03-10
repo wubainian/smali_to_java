@@ -1,0 +1,5 @@
+package android.support.v4.widget
+
+synthetic class s{
+}
+

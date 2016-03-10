@@ -33,7 +33,7 @@ for cur_dir, dirs, files in os.walk( input_dir ):
             break
         #dir
         dst_dir = mkdirs(dest_dir, file_full_path)
-        dest_file = "%s%s%s" % (dst_dir, os.sep, file)
+        dest_file = "%s%s%s" % (dst_dir, os.sep, file.replace(".smali", ".java"))
         #write
         cls.write_to_file(dest_file)
     if is_should_break :

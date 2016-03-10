@@ -1,6 +1,6 @@
 
 from util_str import str_split_regext
-from util_smali import type_get_java_type
+from util_smali import type_get_java_type, judge_if_rest_modifier
 from util_log import *
 
 class Fieldt :
@@ -11,6 +11,7 @@ class Fieldt :
         self.type = None
         self.name = None
         self.value = None
+    
     def parse(self, classt, line):
         arr = str_split_regext(line, "[ \t]+")
         arr_len = len(arr)
@@ -26,7 +27,8 @@ class Fieldt :
         modifiers = arr[1:arr_len-1]
         for modifier in modifiers:
             #judge
-            self.modifiers.append(modifier)
+            if not judge_if_rest_modifier(modifier) :
+                self.modifiers.append(modifier)
         name_type_arr = str_split_regext(sig, ":")
         if len(name_type_arr) != 2 :
             return False
@@ -43,5 +45,19 @@ class Fieldt :
         else :
             self.type = one_type["complete"]
         return True
+    
     def is_static(self):
         return self.modifiers.count("static") > 0
+    
+    def write_to_file(self, file):
+        file.write("\t")
+        if len(self.modifiers) > 0 :
+            for modifier in self.modifiers :
+                file.write("%s " % (modifier) )
+        file.write( "%s %s" % (self.type, self.name))
+        if self.value is not None :
+            file.write( " = %s;\n" % (self.value))
+        else :
+            file.write(";\n")
+        
+        return True

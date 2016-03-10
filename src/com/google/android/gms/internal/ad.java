@@ -1,0 +1,93 @@
+package com.google.android.gms.internal
+
+import android.os.IInterface;
+import android.os.ParcelFileDescriptor;
+import android.os.IBinder;
+import android.os.Bundle;
+
+public interface abstract class ad implements IInterface{
+	//ordinary method
+	public abstract int a(com.google.android.gms.internal.y ay0, []byte abyte0, String aString0, String aString0);
+	public abstract int a([]byte abyte0, String aString0, []java.lang.String aString0);
+	public abstract ParcelFileDescriptor a(android.net.Uri aUri0);
+	public abstract String a();
+	public abstract String a(String aString0);
+	public abstract void a(int aint0);
+	public abstract void a(long along0);
+	public abstract void a(IBinder aIBinder0, Bundle aBundle0);
+	public abstract void a(com.google.android.gms.internal.y ay0);
+	public abstract void a(com.google.android.gms.internal.y ay0, int aint0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, long along0);
+	public abstract void a(com.google.android.gms.internal.y ay0, Bundle aBundle0, int aint0, int aint0);
+	public abstract void a(com.google.android.gms.internal.y ay0, IBinder aIBinder0, int aint0, []java.lang.String aString0, Bundle aBundle0, boolean aboolean0, long along0);
+	public abstract void a(com.google.android.gms.internal.y ay0, IBinder aIBinder0, String aString0, boolean aboolean0, long along0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, int aint0, int aint0, int aint0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, int aint0, IBinder aIBinder0, Bundle aBundle0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, int aint0, boolean aboolean0, boolean aboolean0, boolean aboolean0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, long along0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, IBinder aIBinder0, Bundle aBundle0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, String aString0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, String aString0, int aint0, int aint0, int aint0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, String aString0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, boolean aboolean0);
+	public abstract void a(com.google.android.gms.internal.y ay0, String aString0, boolean aboolean0, []long along0);
+	public abstract void a(com.google.android.gms.internal.y ay0, boolean aboolean0);
+	public abstract void a(String aString0, int aint0);
+	public abstract void a(String aString0, String aString0);
+	public abstract void a(String aString0, String aString0, int aint0);
+	public abstract void a(boolean aboolean0);
+	public abstract Bundle b();
+	public abstract String b(String aString0);
+	public abstract void b(long along0);
+	public abstract void b(com.google.android.gms.internal.y ay0);
+	public abstract void b(com.google.android.gms.internal.y ay0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, int aint0, int aint0, int aint0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, IBinder aIBinder0, Bundle aBundle0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, String aString0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, String aString0, int aint0, int aint0, int aint0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, String aString0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, String aString0, boolean aboolean0);
+	public abstract void b(com.google.android.gms.internal.y ay0, boolean aboolean0);
+	public abstract void b(String aString0, int aint0);
+	public abstract void c();
+	public abstract void c(com.google.android.gms.internal.y ay0);
+	public abstract void c(com.google.android.gms.internal.y ay0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void c(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void c(com.google.android.gms.internal.y ay0, String aString0, String aString0);
+	public abstract void c(com.google.android.gms.internal.y ay0, String aString0, boolean aboolean0);
+	public abstract void c(com.google.android.gms.internal.y ay0, boolean aboolean0);
+	public abstract void c(String aString0);
+	public abstract void c(String aString0, int aint0);
+	public abstract int d(String aString0);
+	public abstract String d();
+	public abstract void d(com.google.android.gms.internal.y ay0);
+	public abstract void d(com.google.android.gms.internal.y ay0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void d(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void d(com.google.android.gms.internal.y ay0, String aString0, boolean aboolean0);
+	public abstract android.net.Uri e(String aString0);
+	public abstract String e();
+	public abstract void e(com.google.android.gms.internal.y ay0);
+	public abstract void e(com.google.android.gms.internal.y ay0, int aint0, boolean aboolean0, boolean aboolean0);
+	public abstract void e(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract com.google.android.gms.common.data.d f();
+	public abstract void f(com.google.android.gms.internal.y ay0);
+	public abstract void f(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void g(com.google.android.gms.internal.y ay0);
+	public abstract void g(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract boolean g();
+	public abstract com.google.android.gms.common.data.d h();
+	public abstract void h(com.google.android.gms.internal.y ay0);
+	public abstract void h(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void i(com.google.android.gms.internal.y ay0);
+	public abstract void i(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract int j(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void k(com.google.android.gms.internal.y ay0, String aString0);
+	public abstract void l(com.google.android.gms.internal.y ay0, String aString0);
+
+}
+
